@@ -49,7 +49,7 @@ if($op == 'edit'){ // ubah data
     }
 }
 
-if(isset($_POST['simpan'])){ // untuk create
+if(isset($_POST['simpan'])){ // untuk
     $nim        = $_POST['nim'];
     $nama       = $_POST['nama'];
     $alamat     = $_POST['alamat'];
@@ -57,7 +57,8 @@ if(isset($_POST['simpan'])){ // untuk create
 
     if($nim && $nama && $alamat && $fakultas){
         if($op == 'edit'){ 
-            $sql1       =   "UPDATE mahasiswa SET nim = '$nim',nama = '$nama',alamat = '$alamat',fakultas = '$fakultas' WHERE id = 'id'";
+            $id         = $_GET['id'];
+            $sql1       =   "UPDATE mahasiswa SET nim = '$nim',nama = '$nama',alamat = '$alamat',fakultas = '$fakultas' WHERE id = '$id'";
             $q1         =   mysqli_query($koneksi,$sql1);
             if($q1){
                 $sukses =   "Data berhasil diupdate";
